@@ -1,33 +1,133 @@
-### Api yatube:
+### Api YaTube:
 
-Данный API позволяет получать информацию о постах, комментариях и группах проекта, а также все действия CRUD
+[![api-yatube-app workflow](https://github.com/alex-zharinov/api_final_yatube/actions/workflows/main.yml/badge.svg)](https://github.com/alex-zharinov/api_final_yatube/actions/workflows/main.yml)
+
+## API для социальной сети «Блогикум»
+> API позволяет взаимодействовать с ресурсами YaTube
+
+## Технологии проекта
+- Python — высокоуровневый язык программирования
+- Django REST Framework — библиотека, используемая в Django для создания Rest API
+- JWT — токен для безопасной атентификации
+- Djoser — библиотека для выполнения очновных действий с моделью пользователя
 
 ### Как запустить проект:
+Клонировать репозиторий и перейти в него в командной строке:
 
-- Клонировать репозиторий и перейти в него в командной строке
+```
+git clone https://github.com/alex-zharinov/api_final_yatube.git
+```
 
-- Cоздать и активировать виртуальное окружение
+```
+cd api_final_yatube
+```
 
-$ python3 -m pip install --upgrade pip
+Cоздать и активировать виртуальное окружение:
 
-- Установить зависимости из файла requirements.txt:
+```
+python3 -m venv venv
+```
 
-$ pip install -r requirements.txt
+* Если у вас Linux/macOS
 
-- Выполнить миграции:
+    ```
+    source venv/bin/activate
+    ```
 
-$ python3 manage.py migrate
+* Если у вас windows
 
-- Запустить проект:
+    ```
+    source venv/scripts/activate
+    ```
 
-$ python3 manage.py runserver
+Установить зависимости из файла requirements.txt:
 
-###Пример запроса:
+```
+python3 -m pip install --upgrade pip
+```
 
-http://127.0.0.1:8000/redoc/ - документация
+```
+pip install -r requirements.txt
+```
 
-http://127.0.0.1:8000/api/v1/posts/ - список постов/создать пост
+Создать .env. Пример:
 
-http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/ - список комментариев/добавить комментарий
+```
+#  ./.env
 
-http://127.0.0.1:8000/api/v1/follow/ - список подписок/подписаться на автора
+SECRET_KEY=SUP3R-S3CR3T-K3Y-F0R-MY-PR0J3CT
+```
+
+Создать БД:
+
+```
+python3 yatube/manage.py migrate
+```
+
+Запустить проект:
+
+```
+python3 yatube/manage.py runserver
+```
+
+### Ваш проект будет доступен по ссылке:
+[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+### Примеры запросов:
+
+- Получить список всех публикаций:
+```
+GET /api/v1/posts/
+```
+Response samples:
+```
+{
+  "count": 123,
+  "next": "http://api.example.org/accounts/?offset=400&limit=100",
+  "previous": "http://api.example.org/accounts/?offset=200&limit=100",
+  "results": [
+    {
+      "id": 0,
+      "author": "string",
+      "text": "string",
+      "pub_date": "2021-10-14T20:41:29.648Z",
+      "image": "string",
+      "group": 0
+    }
+  ]
+}
+```
+- Создать публикацию (только для авторизировнных пользователей):
+```
+POST /api/v1/posts/
+```
+Request samples:
+```
+{
+  "text": "string",
+  "image": "string",
+  "group": 0
+}
+```
+Response samples:
+```
+{
+  "id": 0,
+  "author": "string",
+  "text": "string",
+  "pub_date": "2019-08-24T14:15:22Z",
+  "image": "string",
+  "group": 0
+}
+```
+- Удалить публикацию (только для автора публикации):
+```
+DELETE /api/v1/posts/{id}/
+```
+- Ознакомиться с полныйм списком запросов можно в документации:
+```
+/redoc/
+```
+
+## Автор
+[Жаринов Алексей](https://github.com/alex-zharinov)
