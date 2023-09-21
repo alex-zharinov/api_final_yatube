@@ -1,4 +1,4 @@
-### Api YaTube:
+### API YaTube:
 
 [![api-yatube-app workflow](https://github.com/alex-zharinov/api_final_yatube/actions/workflows/main.yml/badge.svg)](https://github.com/alex-zharinov/api_final_yatube/actions/workflows/main.yml)
 
@@ -8,7 +8,7 @@
 ## Технологии проекта
 - Python — высокоуровневый язык программирования
 - Django REST Framework — библиотека, используемая в Django для создания Rest API
-- JWT — токен для безопасной атентификации
+- JWT — токен для безопасной аyтентификации
 - Djoser — библиотека для выполнения очновных действий с моделью пользователя
 
 ### Как запустить проект:
@@ -97,7 +97,7 @@ Response samples:
   ]
 }
 ```
-- Создать публикацию (только для авторизировнных пользователей):
+- Создать публикацию (только для авторизовнных пользователей):
 ```
 POST /api/v1/posts/
 ```
