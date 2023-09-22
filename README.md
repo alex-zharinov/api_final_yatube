@@ -1,9 +1,9 @@
 ### API Social Net
 
-[![api-yatube-app workflow](https://github.com/alex-zharinov/api_final_yatube/actions/workflows/main.yml/badge.svg)](https://github.com/alex-zharinov/api_final_yatube/actions/workflows/main.yml)
+[![api-social-net workflow](https://github.com/alex-zharinov/api_social_net/actions/workflows/main.yml/badge.svg)](https://github.com/alex-zharinov/api_social_net/actions/workflows/main.yml)
 
-## API для социальной сети «Блогикум»
-> API позволяет взаимодействовать с ресурсами YaTube
+## API для социальной сети
+> API позволяет взаимодействовать с ресурсами сети
 
 ## Технологии проекта:
 - Python — высокоуровневый язык программирования;
@@ -14,10 +14,10 @@
 ### Как запустить проект:
 Клонировать репозиторий и перейти в него в командной строке:
 ```
-git clone https://github.com/alex-zharinov/api_final_yatube.git
+git clone https://github.com/alex-zharinov/api_social_net.git
 ```
 ```
-cd api_final_yatube
+cd api_social_net
 ```
 Cоздать и активировать виртуальное окружение:
 ```
