@@ -1,4 +1,4 @@
-### API YaTube
+### API Social Net
 
 [![api-yatube-app workflow](https://github.com/alex-zharinov/api_final_yatube/actions/workflows/main.yml/badge.svg)](https://github.com/alex-zharinov/api_final_yatube/actions/workflows/main.yml)
 
