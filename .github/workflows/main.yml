@@ -1,4 +1,4 @@
-name: api-yatube-app workflow
+name: api-social-net workflow
 
 on: [push]
 
